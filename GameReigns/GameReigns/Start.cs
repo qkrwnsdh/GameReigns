@@ -45,10 +45,8 @@ namespace GameReigns
 
                     Console.SetCursorPosition(3, 1);
                     Console.Write("{0,3}년 제위", count + 1);
-
                     Console.SetCursorPosition(88, 1);
                     Console.Write("{0,4}", year + 600);
-
                     Console.SetCursorPosition(3, 27);
                     Console.Write("{0}", playerName);
 
@@ -63,29 +61,53 @@ namespace GameReigns
                     Console.SetCursorPosition(60, 4);
                     Console.Write("{0,3}", MONEY);
 
-                    Console.SetCursorPosition(0, 29)
+                    Console.SetCursorPosition(0, 29);
 
                     keys = Console.ReadKey(true);
 
-                    if ('a' == keys.KeyChar || keys.KeyChar == 'A')
+                    while (true)
                     {
+                        if ('a' == keys.KeyChar || keys.KeyChar == 'A')
+                        {
 
-                    }
-                    else if ('d' == keys.KeyChar || keys.KeyChar == 'D')
-                    { 
-                    
+                        }
+                        else if ('d' == keys.KeyChar || keys.KeyChar == 'D')
+                        {
+
+                        }
                     }
                 }
+
                 else if (ConsoleKey.Escape == keys.Key)
                 {
                     Background();
+                    Escape();
+
+                    keys = Console.ReadKey(true);
+
+                    if (ConsoleKey.Enter == keys.Key)
+                    {
+                        Console.Clear();
+
+                        break;
+                    }
+
+                    else if (ConsoleKey.Escape == keys.Key)
+                    {
+                        Background();
+                        BackgroundLogo();
+
+                        Console.SetCursorPosition(0, 29);
+
+                        continue;
+                    }
                 }
+
                 else
                 {
                     continue;
                 }
             }
-
         }
 
         public void GameStop()
@@ -303,6 +325,69 @@ namespace GameReigns
             Console.Write("                       └┐         ┌───┘                                   └───────┘    └────┐ ");
             Console.SetCursorPosition(1, 20);
             Console.Write("                        └─────────┘                                                         └─");
+        }
+
+        public void Escape()
+        {
+            Console.SetCursorPosition(24, 1);
+            Console.Write("                  ┌──────────┐                  ");
+            Console.SetCursorPosition(24, 2);
+            Console.Write("                 ┌┘          └┐                 ");
+            Console.SetCursorPosition(24, 3);
+            Console.Write("                ┌┘            └┐                ");
+            Console.SetCursorPosition(24, 4);
+            Console.Write("                │   ┌┐    ┌┐   │                ");
+            Console.SetCursorPosition(24, 5);
+            Console.Write("                │   ││    ││   │                ");
+            Console.SetCursorPosition(24, 6);
+            Console.Write("                │   ││    ││   │                ");
+            Console.SetCursorPosition(24, 7);
+            Console.Write("                │   └┘    └┘   │                ");
+            Console.SetCursorPosition(24, 8);
+            Console.Write("                │              │                ");
+            Console.SetCursorPosition(24, 9);
+            Console.Write("                └─┐          ┌─┘                ");
+            Console.SetCursorPosition(24, 10);
+            Console.Write("                  │┌┐      ┌┐│                  ");
+            Console.SetCursorPosition(24, 11);
+            Console.Write("                  └┘│┌┐  ┌┐│└┘                  ");
+            Console.SetCursorPosition(24, 12);
+            Console.Write("          ┌──┐      └┘│┌┐│└┘      ┌──┐          ");
+            Console.SetCursorPosition(24, 13);
+            Console.Write("         ┌┘  └──┐     └┘└┘     ┌──┘  └┐         ");
+            Console.SetCursorPosition(24, 14);
+            Console.Write("        ┌┘      └──┐  ┌──┐  ┌──┘      └┐        ");
+            Console.SetCursorPosition(24, 15);
+            Console.Write("       ┌┘          │  └──┘  │          └┐       ");
+            Console.SetCursorPosition(24, 16);
+            Console.Write("      ┌┘          ┌┘  ┌──┐  └┐          └┐      ");
+            Console.SetCursorPosition(24, 17);
+            Console.Write("     ┌┘           │   └──┘   │           └┐     ");
+            Console.SetCursorPosition(24, 18);
+            Console.Write("┌────┴────────────┴──────────┴────────────┴────┐");
+            Console.SetCursorPosition(24, 19);
+            Console.Write("│                                              │");
+            Console.SetCursorPosition(24, 20);
+            Console.Write("│                                              │");
+            Console.SetCursorPosition(24, 21);
+            Console.Write("│                                              │");
+            Console.SetCursorPosition(24, 22);
+            Console.Write("│                                              │");
+            Console.SetCursorPosition(24, 23);
+            Console.Write("│                                              │");
+            Console.SetCursorPosition(24, 24);
+            Console.Write("│ ┌──────────────────────────────────────────┐ │");
+            Console.SetCursorPosition(24, 25);
+            Console.Write("│ │                                          │ │");
+            Console.SetCursorPosition(24, 26);
+            Console.Write("│ └──────────────────────────────────────────┘ │");
+            Console.SetCursorPosition(24, 27);
+            Console.Write("└──────────────────────────────────────────────┘");
+            Console.SetCursorPosition(36, 21);
+            Console.Write("게임을 종료하시겠습니까?");
+            Console.SetCursorPosition(46, 25);
+            Console.Write("종료");
+            Console.SetCursorPosition(0, 29);
         }
     }
 }

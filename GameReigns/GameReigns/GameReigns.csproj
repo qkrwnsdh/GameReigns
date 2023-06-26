@@ -43,6 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Card\Witch.cs" />
+    <Compile Include="Card\Doctor.cs" />
+    <Compile Include="Card\Lover.cs" />
+    <Compile Include="Card\General.cs" />
+    <Compile Include="Card\Executor.cs" />
+    <Compile Include="Card\Permanent.cs" />
+    <Compile Include="Card\farmer.cs" />
+    <Compile Include="Card\Priests.cs" />
+    <Compile Include="Card\Ambassador.cs" />
+    <Compile Include="Card\Ghost.cs" />
     <Compile Include="Influence.cs" />
     <Compile Include="Name.cs" />
     <Compile Include="Program.cs" />

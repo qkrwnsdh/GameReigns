@@ -12,6 +12,8 @@ namespace GameReigns
         {
             Start gameStart = new Start();
             gameStart.GameStart();
+            //gameStart.Escape();
+            
 
         }
     }
