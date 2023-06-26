@@ -10,6 +10,9 @@ namespace GameReigns
     {
         static void Main(string[] args)
         {
+            Start gameStart = new Start();
+            gameStart.GameStart();
+
         }
     }
 }
