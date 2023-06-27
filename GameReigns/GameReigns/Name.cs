@@ -8,7 +8,6 @@ namespace GameReigns
 {
     public class Name
     {
-
         Random random = new Random();
 
         public void PlayerName(ref string name)

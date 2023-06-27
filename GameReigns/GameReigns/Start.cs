@@ -8,6 +8,8 @@ namespace GameReigns
 {
     public class Start
     {
+        int MOVE_POS = 3;
+
         int MAP_SIZE_X = 96;
         int MAP_SIZE_Y = 29;
 
@@ -19,6 +21,7 @@ namespace GameReigns
         int year = default;
         int count = default;
         string playerName = default;
+        string[] conversation = new string[3];
 
         ConsoleKeyInfo keys;
 
@@ -26,6 +29,16 @@ namespace GameReigns
         {
             Name name = new Name();
             Influence influence = new Influence();
+            Card.Witch witch = new Card.Witch();
+            Card.Doctor doctor = new Card.Doctor();
+            Card.Ghost ghost = new Card.Ghost();
+            Card.Ambassador ambassador = new Card.Ambassador();
+            Card.Executor executor = new Card.Executor();
+            Card.Farmer farmer = new Card.Farmer();
+            Card.General general = new Card.General();
+            Card.Lover lover = new Card.Lover();
+            Card.Permanent permanent = new Card.Permanent();
+            Card.Priests priests = new Card.Priests();
 
             name.PlayerName(ref playerName);
 
@@ -60,6 +73,15 @@ namespace GameReigns
                     Console.Write("{0, 3}", MILITARY);
                     Console.SetCursorPosition(60, 4);
                     Console.Write("{0,3}", MONEY);
+
+                    priests.Conversation(ref conversation);
+
+                    Console.SetCursorPosition(30, 7);
+                    Console.Write(conversation[0]);
+                    Console.SetCursorPosition(30, 8);
+                    Console.Write(conversation[1]);
+                    Console.SetCursorPosition(30, 9);
+                    Console.Write(conversation[2]);
 
                     Console.SetCursorPosition(0, 29);
 
@@ -108,11 +130,6 @@ namespace GameReigns
                     continue;
                 }
             }
-        }
-
-        public void GameStop()
-        {
-
         }
 
         public void Background()
@@ -242,9 +259,9 @@ namespace GameReigns
             Console.SetCursorPosition(29, 8);
             Console.Write("│                                    │");
             Console.SetCursorPosition(29, 9);
-            Console.Write("│ ┌────────────────────────────────┐ │");
+            Console.Write("│                                    │");
             Console.SetCursorPosition(29, 10);
-            Console.Write("│ │                                │ │");
+            Console.Write("│ ┌────────────────────────────────┐ │");
             Console.SetCursorPosition(29, 11);
             Console.Write("│ │                                │ │");
             Console.SetCursorPosition(29, 12);
@@ -266,17 +283,17 @@ namespace GameReigns
             Console.SetCursorPosition(29, 20);
             Console.Write("│ │                                │ │");
             Console.SetCursorPosition(29, 21);
-            Console.Write("│ └────────────────────────────────┘ │");
+            Console.Write("│ │                                │ │");
             Console.SetCursorPosition(29, 22);
-            Console.Write("│                                    │");
+            Console.Write("│ │                                │ │");
             Console.SetCursorPosition(29, 23);
-            Console.Write("├────────────────────────────────────┤");
+            Console.Write("│ │                                │ │");
             Console.SetCursorPosition(29, 24);
-            Console.Write("│   ┌───┐   ┌───┐    ┌───┐   ┌───┐   │");
+            Console.Write("│ └────────────────────────────────┘ │");
             Console.SetCursorPosition(29, 25);
-            Console.Write("│   │   │   │   │    │   │   │   │   │");
+            Console.Write("├────────────────────────────────────┤");
             Console.SetCursorPosition(29, 26);
-            Console.Write("│   └───┘   └───┘    └───┘   └───┘   │");
+            Console.Write("│                                    │");
             Console.SetCursorPosition(29, 27);
             Console.Write("└────────────────────────────────────┘");
             Console.SetCursorPosition(32, 2);
@@ -388,6 +405,71 @@ namespace GameReigns
             Console.SetCursorPosition(46, 25);
             Console.Write("종료");
             Console.SetCursorPosition(0, 29);
+        }
+
+        public void Witch()
+        {
+            Console.SetCursorPosition(29, 10);
+            Console.Write("┌────────────────────────────────┐");
+            Console.Write("│                                │");
+            Console.Write("│                                │");
+            Console.Write("│                                │");
+            Console.Write("│                                │");
+            Console.Write("│                                │");
+            Console.Write("│                                │");
+            Console.Write("│                                │");
+            Console.Write("│                                │");
+            Console.Write("│                                │");
+            Console.Write("│                                │");
+            Console.Write("│                                │");
+            Console.Write("│                                │");
+            Console.Write("│                                │");
+            Console.Write("└────┴──────────────────────┴────┘");
+        }
+
+        public void Priests()
+        { 
+        
+        }
+
+        public void Permanent()
+        { 
+        
+        }
+
+        public void Lover()
+        { 
+        
+        }
+
+        public void Ghost()
+        { 
+        
+        }
+
+        public void General()
+        { 
+        
+        }
+
+        public void Farmer()
+        { 
+        
+        }
+
+        public void Executor()
+        { 
+        
+        }
+
+        public void Doctor()
+        { 
+        
+        }
+
+        public void Ambassador()
+        { 
+        
         }
     }
 }

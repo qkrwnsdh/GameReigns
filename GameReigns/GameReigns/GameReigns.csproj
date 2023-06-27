@@ -49,7 +49,7 @@
     <Compile Include="Card\General.cs" />
     <Compile Include="Card\Executor.cs" />
     <Compile Include="Card\Permanent.cs" />
-    <Compile Include="Card\farmer.cs" />
+    <Compile Include="Card\Farmer.cs" />
     <Compile Include="Card\Priests.cs" />
     <Compile Include="Card\Ambassador.cs" />
     <Compile Include="Card\Ghost.cs" />
