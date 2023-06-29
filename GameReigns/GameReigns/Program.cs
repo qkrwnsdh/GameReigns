@@ -10,11 +10,11 @@ namespace GameReigns
     {
         static void Main(string[] args)
         {
-            Start gameStart = new Start();
-            gameStart.GameStart();
-            //gameStart.Escape();
-            
+            Console.CursorVisible = false;
 
+            Start gameStart = new Start();
+
+            gameStart.GameStart();
         }
     }
 }

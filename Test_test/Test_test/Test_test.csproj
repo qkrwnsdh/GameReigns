@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4AF962D8-C478-4A10-B7ED-79288658D73F}</ProjectGuid>
+    <ProjectGuid>{423DB4EF-C117-41E9-8FF4-B1F949F51491}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>GameReigns</RootNamespace>
-    <AssemblyName>GameReigns</AssemblyName>
+    <RootNamespace>Test_test</RootNamespace>
+    <AssemblyName>Test_test</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,21 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Card\Witch.cs" />
-    <Compile Include="Card\Doctor.cs" />
-    <Compile Include="Card\Lover.cs" />
-    <Compile Include="Card\General.cs" />
-    <Compile Include="Card\Executor.cs" />
-    <Compile Include="Card\Permanent.cs" />
-    <Compile Include="Card\Farmer.cs" />
-    <Compile Include="Card\Priests.cs" />
-    <Compile Include="Card\Ambassador.cs" />
-    <Compile Include="Card\Ghost.cs" />
-    <Compile Include="Death.cs" />
-    <Compile Include="Name.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Start.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
