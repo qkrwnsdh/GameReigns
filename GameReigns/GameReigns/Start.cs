@@ -45,6 +45,7 @@ namespace GameReigns
         int prologueNumber = 0;
 
         int[] point = new int[8];
+        string[] pattern = new string[8];
         string[] conversation = new string[5];
 
         ConsoleKeyInfo keys;
@@ -53,13 +54,17 @@ namespace GameReigns
         {
             while (true)
             {
-                name.PlayerName(ref playerName);
+                RELIGION = 50;
+                SENTIMENT = 50;
+                MILITARY = 50;
+                MONEY = 50;
 
+                name.PlayerName(ref playerName);
 
                 Background();
                 BackgroundLogo();
 
-                keys = Console.ReadKey(true); 
+                keys = Console.ReadKey(true);
 
                 if (ConsoleKey.Enter == keys.Key)
                 {
@@ -96,7 +101,7 @@ namespace GameReigns
 
                             Thread.Sleep(1000);
 
-                            continue;
+                            break;
                         }
                         if (RELIGION <= 0)
                         {
@@ -334,7 +339,7 @@ namespace GameReigns
                                     if (MOVE_POS == 21)
                                     {
                                         prologueNumber += 1;
-                                        
+
                                         break;
                                     }
 
@@ -377,39 +382,39 @@ namespace GameReigns
                         {
                             case 0:
                                 ambassador.AmbassadorLogo();
-                                ambassador.Conversation(ref conversation, ref point);
+                                ambassador.Conversation(ref conversation, ref point, ref pattern);
                                 break;
                             case 1:
                                 doctor.DoctorLogo();
-                                doctor.Conversation(ref conversation, ref point);
+                                doctor.Conversation(ref conversation, ref point, ref pattern);
                                 break;
                             case 2:
                                 executor.ExecutorLogo();
-                                executor.Conversation(ref conversation, ref point);
+                                executor.Conversation(ref conversation, ref point, ref pattern);
                                 break;
                             case 3:
                                 farmer.FarmerLogo();
-                                farmer.Conversation(ref conversation, ref point);
+                                farmer.Conversation(ref conversation, ref point, ref pattern);
                                 break;
                             case 4:
                                 general.GeneralLogo();
-                                general.Conversation(ref conversation, ref point);
+                                general.Conversation(ref conversation, ref point, ref pattern);
                                 break;
                             case 5:
                                 lover.LoverLogo();
-                                lover.Conversation(ref conversation, ref point);
+                                lover.Conversation(ref conversation, ref point, ref pattern);
                                 break;
                             case 6:
                                 permanent.PermanentLogo();
-                                permanent.Conversation(ref conversation, ref point);
+                                permanent.Conversation(ref conversation, ref point, ref pattern);
                                 break;
                             case 7:
                                 priests.PriestsLogo();
-                                priests.Conversation(ref conversation, ref point);
+                                priests.Conversation(ref conversation, ref point, ref pattern);
                                 break;
                             case 8:
                                 witch.WitchLogo();
-                                witch.Conversation(ref conversation, ref point);
+                                witch.Conversation(ref conversation, ref point, ref pattern);
                                 break;
                         }
 
@@ -463,6 +468,25 @@ namespace GameReigns
                                     {
                                         Console.SetCursorPosition(22, 11);
                                         Console.Write(conversation[3]);
+                                        Console.SetCursorPosition(33, 3);
+                                        Console.Write(pattern[0]);
+                                        Console.SetCursorPosition(42, 3);
+                                        Console.Write(pattern[1]);
+                                        Console.SetCursorPosition(51, 3);
+                                        Console.Write(pattern[2]);
+                                        Console.SetCursorPosition(60, 3);
+                                        Console.Write(pattern[3]);
+                                    }
+                                    if (MOVE_POS == 31)
+                                    {
+                                        Console.SetCursorPosition(33, 3);
+                                        Console.Write("───");
+                                        Console.SetCursorPosition(42, 3);
+                                        Console.Write("───");
+                                        Console.SetCursorPosition(51, 3);
+                                        Console.Write("───");
+                                        Console.SetCursorPosition(60, 3);
+                                        Console.Write("───");
                                     }
                                 }
                             }
@@ -506,6 +530,25 @@ namespace GameReigns
                                     {
                                         Console.SetCursorPosition(42, 11);
                                         Console.Write(conversation[4]);
+                                        Console.SetCursorPosition(33, 3);
+                                        Console.Write(pattern[4]);
+                                        Console.SetCursorPosition(42, 3);
+                                        Console.Write(pattern[5]);
+                                        Console.SetCursorPosition(51, 3);
+                                        Console.Write(pattern[6]);
+                                        Console.SetCursorPosition(60, 3);
+                                        Console.Write(pattern[7]);
+                                    }
+                                    if (MOVE_POS == 31)
+                                    {
+                                        Console.SetCursorPosition(33, 3);
+                                        Console.Write("───");
+                                        Console.SetCursorPosition(42, 3);
+                                        Console.Write("───");
+                                        Console.SetCursorPosition(51, 3);
+                                        Console.Write("───");
+                                        Console.SetCursorPosition(60, 3);
+                                        Console.Write("───");
                                     }
                                 }
                             }

@@ -11,7 +11,7 @@ namespace GameReigns.Card
     {
         Random random = new Random();
 
-        public void Conversation(ref string[] conversation, ref int[] point)
+        public void Conversation(ref string[] conversation, ref int[] point, ref string[] pattern)
         {
             int number = random.Next(0,6);
 
@@ -23,15 +23,15 @@ namespace GameReigns.Card
                     conversation[2] = "                                    ";
                     conversation[3] = "아니요";
                     conversation[4] = "예";
-                    point[0] = -10;
-                    point[1] = -10;
-                    point[2] = -10;
-                    point[3] = 0;
+                    point[0] = -10; pattern[0] = " ○ ";
+                    point[1] = -10; pattern[1] = " ○ ";
+                    point[2] = -10; pattern[2] = " ○ ";
+                    point[3] = 0; pattern[3] = default;
 
-                    point[4] = 10;
-                    point[5] = 10;
-                    point[6] = 10;
-                    point[7] = -20;
+                    point[4] = 10; pattern[4] = " ○ ";
+                    point[5] = 10; pattern[5] = " ○ ";
+                    point[6] = 10; pattern[6] = " ○ ";
+                    point[7] = -20; pattern[7] = " ○ ";
                     break;
                 case 1:
                     conversation[0] = "  올해 봄 축제는 저와 함께 가시죠   ";
@@ -39,15 +39,15 @@ namespace GameReigns.Card
                     conversation[2] = "    외국 영빈들을 접대시켜 보죠     ";
                     conversation[3] = "아니요";
                     conversation[4] = "예";
-                    point[0] = -10;
-                    point[1] = 0;
-                    point[2] = 0;
-                    point[3] = 0;
+                    point[0] = -10; pattern[0] = " ○ ";
+                    point[1] = 0; pattern[1] = default;
+                    point[2] = 0; pattern[2] = default;
+                    point[3] = 0; pattern[3] = default;
 
-                    point[4] = -10;
-                    point[5] = 10;
-                    point[6] = 10;
-                    point[7] = -10;
+                    point[4] = -10; pattern[4] = " ○ ";
+                    point[5] = 10; pattern[5] = " ○ ";
+                    point[6] = 10; pattern[6] = " ○ ";
+                    point[7] = -10; pattern[7] = " ○ ";
                     break;
                 case 2:                                         //마녀 덱 추가
                     conversation[0] = "  얼마 전 이상한 여자를 만났습니다  ";
@@ -55,15 +55,15 @@ namespace GameReigns.Card
                     conversation[2] = "  여자입니다. 만나 보시겠습니까?    ";
                     conversation[3] = "아니요";
                     conversation[4] = "예";
-                    point[0] = 20;
-                    point[1] = -10;
-                    point[2] = -10;
-                    point[3] = 0;
+                    point[0] = 20; pattern[0] = " ○ ";
+                    point[1] = -10; pattern[1] = " ○ ";
+                    point[2] = -10; pattern[2] = " ○ ";
+                    point[3] = 0; pattern[3] = default;
 
-                    point[4] = -10;
-                    point[5] = 10;
-                    point[6] = 10;
-                    point[7] = 0;
+                    point[4] = -10; pattern[4] = " ○ ";
+                    point[5] = 10; pattern[5] = " ○ ";
+                    point[6] = 10; pattern[6] = " ○ ";
+                    point[7] = 0; pattern[7] = default;
                     break;
                 case 3:
                     conversation[0] = "      수녀들이 고양이처럼 울기      ";
@@ -71,15 +71,15 @@ namespace GameReigns.Card
                     conversation[2] = "     마을까지 전염된 모양입니다.    ";
                     conversation[3] = "내버려 두게...";
                     conversation[4] = "장군!";
-                    point[0] = -20;
-                    point[1] = 0;
-                    point[2] = 0;
-                    point[3] = 0;
+                    point[0] = -20; pattern[0] = " ○ ";
+                    point[1] = 0; pattern[1] = default;
+                    point[2] = 0; pattern[2] = default;
+                    point[3] = 0; pattern[3] = default;
 
-                    point[4] = -10;
-                    point[5] = 0;
-                    point[6] = 20;
-                    point[7] = 0;
+                    point[4] = -10; pattern[4] = " ○ ";
+                    point[5] = 0; pattern[5] = default;
+                    point[6] = 20; pattern[6] = " ○ ";
+                    point[7] = 0; pattern[7] = default;
                     break;
                 case 4:                                         //노예 이벤트 종료
                     conversation[0] = "    노예선을 시찰하고 왔습니다...   ";
@@ -87,15 +87,15 @@ namespace GameReigns.Card
                     conversation[2] = "          할 수 없어요...           ";
                     conversation[3] = "돈벌이니깐 어쩔 수 없지";
                     conversation[4] = "노예무역에서 손을 떼지";
-                    point[0] = 0;
-                    point[1] = -20;
-                    point[2] = 0;
-                    point[3] = 0;
+                    point[0] = 0; pattern[0] = default;
+                    point[1] = -20; pattern[1] = " ○ ";
+                    point[2] = 0; pattern[2] = default;
+                    point[3] = 0; pattern[3] = default;
 
-                    point[4] = 0;
-                    point[5] = -10;
-                    point[6] = 0;
-                    point[7] = -20;
+                    point[4] = 0; pattern[4] = default;
+                    point[5] = -10; pattern[5] = " ○ ";
+                    point[6] = 0; pattern[6] = default;
+                    point[7] = -20; pattern[7] = " ○ ";
                     break;
                 case 5:
                     conversation[0] = "      이 케이크를 먹으면 천국에     ";
@@ -103,15 +103,15 @@ namespace GameReigns.Card
                     conversation[2] = "                                    ";
                     conversation[3] = "위장에도 부담이 간다";
                     conversation[4] = "예";
-                    point[0] = 0;
-                    point[1] = -10;
-                    point[2] = 0;
-                    point[3] = 0;
+                    point[0] = 0; pattern[0] = default;
+                    point[1] = -10; pattern[1] = " ○ ";
+                    point[2] = 0; pattern[2] = default;
+                    point[3] = 0; pattern[3] = default;
 
-                    point[4] = 0;
-                    point[5] = 10;
-                    point[6] = 0;
-                    point[7] = 0;
+                    point[4] = 0; pattern[4] = default;
+                    point[5] = 10; pattern[5] = " ○ ";
+                    point[6] = 0; pattern[6] = default;
+                    point[7] = 0; pattern[7] = default;
                     break;
             }
         }

@@ -11,7 +11,7 @@ namespace GameReigns.Card
     {
         Random random = new Random();
 
-        public void Conversation(ref string[] conversation, ref int[] point)
+        public void Conversation(ref string[] conversation, ref int[] point, ref string[] pattern)
         {
             int number = random.Next(0,12);
 
@@ -23,15 +23,15 @@ namespace GameReigns.Card
                     conversation[2] = "     모두 구호활동을 도와주세요!    ";
                     conversation[3] = "아니요";
                     conversation[4] = "예";
-                    point[0] = 0;
-                    point[1] = -20;
-                    point[2] = 0;
-                    point[3] = 0;
+                    point[0] = 0; pattern[0] = default;
+                    point[1] = -20; pattern[1] = " ○ ";
+                    point[2] = 0; pattern[2] = default;
+                    point[3] = 0; pattern[3] = default;
 
-                    point[4] = -10;
-                    point[5] = 10;
-                    point[6] = -10;
-                    point[7] = -20;
+                    point[4] = -10; pattern[4] = " ○ ";
+                    point[5] = 10; pattern[5] = " ○ ";
+                    point[6] = -10; pattern[6] = " ○ ";
+                    point[7] = -20; pattern[7] = " ○ ";
                     break;
                 case 1:
                     conversation[0] = "    광산에서 금이 발견되었습니다.   ";
@@ -39,15 +39,15 @@ namespace GameReigns.Card
                     conversation[2] = "                                    ";
                     conversation[3] = "아니요";
                     conversation[4] = "예";
-                    point[0] = 0;
-                    point[1] = -10;
-                    point[2] = 0;
-                    point[3] = 10;
+                    point[0] = 0; pattern[0] = default;
+                    point[1] = -10; pattern[1] = " ○ ";
+                    point[2] = 0; pattern[2] = default;
+                    point[3] = 10; pattern[3] = " ○ ";
 
-                    point[4] = 0;
-                    point[5] = -20;
-                    point[6] = 0;
-                    point[7] = 10;
+                    point[4] = 0; pattern[4] = default;
+                    point[5] = -20; pattern[5] = " ○ ";
+                    point[6] = 0; pattern[6] = default;
+                    point[7] = 10; pattern[7] = " ○ ";
                     break;
                 case 2:
                     conversation[0] = "  소들이 전염병으로 매일 죽어가고   ";
@@ -55,15 +55,15 @@ namespace GameReigns.Card
                     conversation[2] = " 유지할 수 있도록 부디 도와주세요!  ";
                     conversation[3] = "아니요";
                     conversation[4] = "예";
-                    point[0] = 0;
-                    point[1] = -10;
-                    point[2] = 0;
-                    point[3] = 10;
+                    point[0] = 0; pattern[0] = default;
+                    point[1] = -10; pattern[1] = " ○ ";
+                    point[2] = 0; pattern[2] = default;
+                    point[3] = 10; pattern[3] = " ○ ";
 
-                    point[4] = 0;
-                    point[5] = 10;
-                    point[6] = 0;
-                    point[7] = -10;
+                    point[4] = 0; pattern[4] = default;
+                    point[5] = 10; pattern[5] = " ○ ";
+                    point[6] = 0; pattern[6] = default;
+                    point[7] = -10; pattern[7] = " ○ ";
                     break;
                 case 3:                     //대사 특정 카드 발생
                     conversation[0] = "    물방울 강이 말라 버렸습니다.    ";
@@ -71,15 +71,15 @@ namespace GameReigns.Card
                     conversation[2] = "                                    ";
                     conversation[3] = "아니요";
                     conversation[4] = "예";
-                    point[0] = 0;
-                    point[1] = -10;
-                    point[2] = 0;
-                    point[3] = 0;
+                    point[0] = 0; pattern[0] = default;
+                    point[1] = -10; pattern[1] = " ○ ";
+                    point[2] = 0; pattern[2] = default;
+                    point[3] = 0; pattern[3] = default;
 
-                    point[4] = 0;
-                    point[5] = 10;
-                    point[6] = 0;
-                    point[7] = -20;
+                    point[4] = 0; pattern[4] = default;
+                    point[5] = 10; pattern[5] = " ○ ";
+                    point[6] = 0; pattern[6] = default;
+                    point[7] = -20; pattern[7] = " ○ ";
                     break;
                 case 4:
                     conversation[0] = "   광산 폭발사고로 적어도 100명이   ";
@@ -87,15 +87,15 @@ namespace GameReigns.Card
                     conversation[2] = "         계속하시겠습니까?          ";
                     conversation[3] = "아니요";
                     conversation[4] = "예";
-                    point[0] = 0;
-                    point[1] = 0;
-                    point[2] = 0;
-                    point[3] = -10;
+                    point[0] = 0; pattern[0] = default;
+                    point[1] = 0; pattern[1] = default;
+                    point[2] = 0; pattern[2] = default;
+                    point[3] = -10; pattern[3] = " ○ ";
 
-                    point[4] = 0;
-                    point[5] = -20;
-                    point[6] = 0;
-                    point[7] = 10;
+                    point[4] = 0; pattern[4] = default;
+                    point[5] = -20; pattern[5] = " ○ ";
+                    point[6] = 0; pattern[6] = default;
+                    point[7] = 10; pattern[7] = " ○ ";
                     break;
                 case 5:
                     conversation[0] = "     광산 노동자들이 임금인상을     ";
@@ -103,15 +103,15 @@ namespace GameReigns.Card
                     conversation[2] = "                                    ";
                     conversation[3] = "아니요";
                     conversation[4] = "예";
-                    point[0] = 0;
-                    point[1] = -10;
-                    point[2] = 0;
-                    point[3] = 0;
+                    point[0] = 0; pattern[0] = default;
+                    point[1] = -10; pattern[1] = " ○ ";
+                    point[2] = 0; pattern[2] = default;
+                    point[3] = 0; pattern[3] = default;
 
-                    point[4] = 0;
-                    point[5] = 10;
-                    point[6] = 0;
-                    point[7] = -20;
+                    point[4] = 0; pattern[4] = default;
+                    point[5] = 10; pattern[5] = " ○ ";
+                    point[6] = 0; pattern[6] = default;
+                    point[7] = -20; pattern[7] = " ○ ";
                     break;
                 case 6:
                     conversation[0] = "   월리엄 집행관이(가) 마음에 들지  ";
@@ -119,15 +119,15 @@ namespace GameReigns.Card
                     conversation[2] = "           사기꾼이에요.            ";
                     conversation[3] = "아니요";
                     conversation[4] = "예";
-                    point[0] = 0;
-                    point[1] = -10;
-                    point[2] = 10;
-                    point[3] = 0;
+                    point[0] = 0; pattern[0] = default;
+                    point[1] = -10; pattern[1] = " ○ ";
+                    point[2] = 10; pattern[2] = " ○ ";
+                    point[3] = 0; pattern[3] = default;
 
-                    point[4] = 0;
-                    point[5] = 0;
-                    point[6] = -10;
-                    point[7] = 0;
+                    point[4] = 0; pattern[4] = default;
+                    point[5] = 0; pattern[5] = default;
+                    point[6] = -10; pattern[6] = " ○ ";
+                    point[7] = 0; pattern[7] = default;
                     break;
                 case 7:
                     conversation[0] = "    올해는 심한 흉년으로 백성들이   ";
@@ -135,15 +135,15 @@ namespace GameReigns.Card
                     conversation[2] = "         세금을 낮추십시오.         ";
                     conversation[3] = "뻔뻔하군";
                     conversation[4] = "예";
-                    point[0] = 10;
-                    point[1] = -20;
-                    point[2] = 10;
-                    point[3] = 0;
+                    point[0] = 10; pattern[0] = " ○ ";
+                    point[1] = -20; pattern[1] = " ○ ";
+                    point[2] = 10; pattern[2] = " ○ ";
+                    point[3] = 0; pattern[3] = default;
 
-                    point[4] = -10;
-                    point[5] = 20;
-                    point[6] = -10;
-                    point[7] = -10;
+                    point[4] = -10; pattern[4] = " ○ ";
+                    point[5] = 20; pattern[5] = " ○ ";
+                    point[6] = -10; pattern[6] = " ○ ";
+                    point[7] = -10; pattern[7] = " ○ ";
                     break;
                 case 8:
                     conversation[0] = "      밤의 수도는 위험합니다.       ";
@@ -151,15 +151,15 @@ namespace GameReigns.Card
                     conversation[2] = "                                    ";
                     conversation[3] = "아니요";
                     conversation[4] = "예";
-                    point[0] = 0;
-                    point[1] = -10;
-                    point[2] = -10;
-                    point[3] = 0;
+                    point[0] = 0; pattern[0] = default;
+                    point[1] = -10; pattern[1] = " ○ ";
+                    point[2] = -10; pattern[2] = " ○ ";
+                    point[3] = 0; pattern[3] = default;
 
-                    point[4] = 0;
-                    point[5] = 10;
-                    point[6] = 10;
-                    point[7] = -10;
+                    point[4] = 0; pattern[4] = default;
+                    point[5] = 10; pattern[5] = " ○ ";
+                    point[6] = 10; pattern[6] = " ○ ";
+                    point[7] = -10; pattern[7] = " ○ ";
                     break;
                 case 9:
                     conversation[0] = "       폐하께서 이를 하셨다니       ";
@@ -167,15 +167,15 @@ namespace GameReigns.Card
                     conversation[2] = "                                    ";
                     conversation[3] = "농담이었네";
                     conversation[4] = "협상한다";
-                    point[0] = 0;
-                    point[1] = 10;
-                    point[2] = -10;
-                    point[3] = 0;
+                    point[0] = 0; pattern[0] = default;
+                    point[1] = 10; pattern[1] = " ○ ";
+                    point[2] = -10; pattern[2] = " ○ ";
+                    point[3] = 0; pattern[3] = default;
 
-                    point[4] = 0;
-                    point[5] = -10;
-                    point[6] = 10;
-                    point[7] = 0;
+                    point[4] = 0; pattern[4] = default;
+                    point[5] = -10; pattern[5] = " ○ ";
+                    point[6] = 10; pattern[6] = " ○ ";
+                    point[7] = 0; pattern[7] = default;
                     break;
                 case 10:
                     conversation[0] = "   농민 반란이 일어났습니다! 많은   ";
@@ -183,15 +183,15 @@ namespace GameReigns.Card
                     conversation[2] = " 가담하고 군인도 제어할 수 없습니다 ";
                     conversation[3] = "성문을 폐쇄하게";
                     conversation[4] = "군대를 증원하게";
-                    point[0] = -20;
-                    point[1] = -20;
-                    point[2] = 20;
-                    point[3] = 0;
+                    point[0] = -20; pattern[0] = " ○ ";
+                    point[1] = -20; pattern[1] = " ○ ";
+                    point[2] = 20; pattern[2] = " ○ ";
+                    point[3] = 0; pattern[3] = default;
 
-                    point[4] = 0;
-                    point[5] = -10;
-                    point[6] = 20;
-                    point[7] = -20;
+                    point[4] = 0; pattern[4] = default;
+                    point[5] = -10; pattern[5] = " ○ ";
+                    point[6] = 20; pattern[6] = " ○ ";
+                    point[7] = -20; pattern[7] = " ○ ";
                     break;
                 case 11:                  //비축식량 : 민심0일 경우 민심 50
                     conversation[0] = "      기근을 대비해 식량창고를      ";
@@ -199,15 +199,15 @@ namespace GameReigns.Card
                     conversation[2] = "                                    ";
                     conversation[3] = "아니요";
                     conversation[4] = "예";
-                    point[0] = 0;
-                    point[1] = -20;
-                    point[2] = -10;
-                    point[3] = 0;
+                    point[0] = 0; pattern[0] = default;
+                    point[1] = -20; pattern[1] = " ○ ";
+                    point[2] = -10; pattern[2] = " ○ ";
+                    point[3] = 0; pattern[3] = default;
 
-                    point[4] = 0;
-                    point[5] = 10;
-                    point[6] = 10;
-                    point[7] = -20;
+                    point[4] = 0; pattern[4] = default;
+                    point[5] = 10; pattern[5] = " ○ ";
+                    point[6] = 10; pattern[6] = " ○ ";
+                    point[7] = -20; pattern[7] = " ○ ";
                     break;
             }
         }
