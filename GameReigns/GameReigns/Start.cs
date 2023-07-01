@@ -27,26 +27,26 @@ namespace GameReigns
         Card.Permanent permanent = new Card.Permanent();
         Card.Priests priests = new Card.Priests();
 
-        int MAP_SIZE_X = 96;
-        int MAP_SIZE_Y = 29;
+        int MAP_SIZE_X = 96;                            //메인 화면 사이즈 X
+        int MAP_SIZE_Y = 29;                            //메인 화면 사이즈 Y
 
-        int RELIGION = 50;
-        int SENTIMENT = 50;
-        int MILITARY = 50;
-        int MONEY = 50;
+        int RELIGION = 50;                              //종교 기본값 50 초기화
+        int SENTIMENT = 50;                             //민심 기본값 50 초기화
+        int MILITARY = 50;                              //군사 기본값 50 초기화
+        int MONEY = 50;                                 //자금 기본값 50 초기화
 
-        int year = default;
-        int count = default;
-        int endCount = default;
-        int quarter = default;
-        string playerName = default;
+        int year = default;                             //총 연도
+        int count = default;                            //클래스 선택
+        int endCount = default;                         //각각의 왕 생존 일
+        int quarter = default;                          //세력 0, 100 달성시 죽음 확인
+        string playerName = default;                    //램덤 왕의 이름
 
-        int prologueCount = 0;
-        int prologueNumber = 0;
+        int prologueCount = 0;                          //게임 시작 시 1,2회차 망자 튜트리얼
+        int prologueNumber = 0;                         //각각 프롤로그 카운트
 
-        int[] point = new int[8];
-        string[] pattern = new string[8];
-        string[] conversation = new string[5];
+        int[] point = new int[8];                       //증감 점수
+        string[] pattern = new string[8];               //증감 점수에 해당하는 표기
+        string[] conversation = new string[5];          //대화 불러오기
 
         ConsoleKeyInfo keys;
 
@@ -54,18 +54,18 @@ namespace GameReigns
         {
             while (true)
             {
-                RELIGION = 50;
+                RELIGION = 50;                          //세력 50 초기화 및 죽었을때 50으로 초기화
                 SENTIMENT = 50;
                 MILITARY = 50;
                 MONEY = 50;
 
-                name.PlayerName(ref playerName);
+                name.PlayerName(ref playerName);        //랜덤 이름 가져오기
 
                 Background();
                 BackgroundLogo();
 
                 keys = Console.ReadKey(true);
-
+                // { 게임 시작
                 if (ConsoleKey.Enter == keys.Key)
                 {
 
@@ -92,7 +92,7 @@ namespace GameReigns
                         Console.SetCursorPosition(60, 4);
                         Console.Write("{0,3}", MONEY);
 
-                        if (endCount == 30)
+                        if (endCount == 20)                      //endCount 횟수 에 따른 승리 엔딩
                         {
                             prologueCount += 1;
                             endCount = 0;
@@ -103,6 +103,8 @@ namespace GameReigns
 
                             break;
                         }
+
+                        // { 세력 0 or 100 일시 죽음
                         if (RELIGION <= 0)
                         {
                             prologueCount += 1;
@@ -199,9 +201,12 @@ namespace GameReigns
 
                             continue;
                         }
+                        // } 세력 0 or 100 일시 죽음
 
-                        int MOVE_POS = 31;
+                        int MOVE_POS = 31;                      //카드 이동을 위한 좌표값
 
+
+                        // { 1회차 프롤로그 불러오기
                         while (4 <= prologueNumber && prologueNumber <= 8 && prologueCount == 1)
                         {
                             MOVE_POS = 31;
@@ -287,7 +292,9 @@ namespace GameReigns
                             Console.SetCursorPosition(60, 4);
                             Console.Write("{0,3}", MONEY);
                         }
+                        // } 1회차 프롤로그 불러오기
 
+                        // { 2회차 프롤로그 불러오기
                         while (0 <= prologueNumber && prologueNumber <= 3 && prologueCount == 0)
                         {
                             MOVE_POS = 31;
@@ -373,12 +380,13 @@ namespace GameReigns
                             Console.SetCursorPosition(60, 4);
                             Console.Write("{0,3}", MONEY);
                         }
+                        // } 2회차 프롤로그 불러오기
 
                         MOVE_POS = 31;
 
                         count = random.Next(0, 9);
 
-                        switch (count)
+                        switch (count)                              //랜덤 카드 소환
                         {
                             case 0:
                                 ambassador.AmbassadorLogo();
@@ -429,7 +437,7 @@ namespace GameReigns
                         {
                             keys = Console.ReadKey(true);
 
-                            if ('a' == keys.KeyChar || keys.KeyChar == 'A')
+                            if ('a' == keys.KeyChar || keys.KeyChar == 'A')                 // 'a', 'A' 키 입력시 카드 좌측 이동 
                             {
                                 if (MOVE_POS == 31 || MOVE_POS == 41)
                                 {
@@ -491,7 +499,7 @@ namespace GameReigns
                                 }
                             }
 
-                            else if ('d' == keys.KeyChar || keys.KeyChar == 'D')
+                            else if ('d' == keys.KeyChar || keys.KeyChar == 'D')            // 'd', 'D' 키 입력시 카드 좌측 이동 
                             {
                                 if (MOVE_POS == 21 || MOVE_POS == 31)
                                 {
@@ -553,7 +561,7 @@ namespace GameReigns
                                 }
                             }
 
-                            else if (ConsoleKey.Enter == keys.Key)
+                            else if (ConsoleKey.Enter == keys.Key)                          // 카드 선택 기능 그에 해당하는 점수 변환 및 0 or 100 체크
                             {
                                 if (MOVE_POS == 21)
                                 {
@@ -651,7 +659,9 @@ namespace GameReigns
                     }
 
                 }
+                // } 게임 시작
 
+                // { 게임 종료
                 else if (ConsoleKey.Escape == keys.Key)
                 {
                     Background();
@@ -659,14 +669,14 @@ namespace GameReigns
 
                     keys = Console.ReadKey(true);
 
-                    if (ConsoleKey.Enter == keys.Key)
+                    if (ConsoleKey.Enter == keys.Key)               //enter 입력시 종료
                     {
                         Console.Clear();
 
                         break;
                     }
 
-                    else if (ConsoleKey.Escape == keys.Key)
+                    else if (ConsoleKey.Escape == keys.Key)         //esc 입력시 메인창
                     {
                         Background();
                         BackgroundLogo();
@@ -676,7 +686,7 @@ namespace GameReigns
                         continue;
                     }
                 }
-
+                // } 게임 종료
                 else
                 {
                     continue;
@@ -2910,5 +2920,6 @@ namespace GameReigns
                 Thread.Sleep(10);
             }
         }
+
     }
 }

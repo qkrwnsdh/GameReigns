@@ -14,7 +14,7 @@ namespace GameReigns
         {
             int nameNumber = random.Next(0, 20);
 
-            switch (nameNumber)
+            switch (nameNumber)                     //왕 랜덤 이름
             {
                 case 0:
                     name = "왈라키아 블라드 왕";

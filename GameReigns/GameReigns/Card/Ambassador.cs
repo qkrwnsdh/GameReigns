@@ -12,7 +12,7 @@ namespace GameReigns.Card
         Random random = new Random();
 
         public void Conversation(ref string[] conversation, ref int[] point, ref string[] pattern)
-        {
+        {                                   //대사집                   증감                증감 확인
             int number = random.Next(0, 9);
 
             switch (number)
